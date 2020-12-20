@@ -70,10 +70,11 @@ class App extends Component {
   render(){
     return (
       <div>
-        <div>
-          <img src="EmmyTrophy.jpg"/>
+        <div class="Banner">
+          <img src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.jpg?raw=trues"/>
+          <h1>The Shoppies</h1>
+          <img src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.jpg?raw=trues"/>
         </div>
-        <h1>The Shoppies</h1>
         <h2>Search Criteria</h2>
           <label htmlFor="movieTitle">Movie Title:</label>
           <input onChange={this.updateSearchTerm} name="movieTitle" type="text"></input>
