@@ -70,6 +70,9 @@ class App extends Component {
   render(){
     return (
       <div>
+        <div>
+          <img src="EmmyTrophy.jpg"/>
+        </div>
         <h1>The Shoppies</h1>
         <h2>Search Criteria</h2>
           <label htmlFor="movieTitle">Movie Title:</label>
