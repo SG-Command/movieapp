@@ -11,13 +11,18 @@ class MovieList extends Component {
     constructor(){
         super();
 
-        this.createURL = this.createURL.bind(this)
+        this.createURL = this.createURL.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
     
     // FUNCTIONS
     createURL(imdbID){
         var newurl = 'https://www.imdb.com/title/'+imdbID+'/'
         return newurl
+    }
+
+    handleClick = (e) => {
+        this.props.nominateMovie(e.target.value)
     }
 
     render(){
@@ -32,8 +37,7 @@ class MovieList extends Component {
                     <p>{movie.Year}</p>
                     <p>{movie.Type}</p>
                     <img src={movie.Poster}></img>
-                    <button>Nominate</button>
-                    
+                    <button value={movie.Title} onClick={this.handleClick}>Nominate</button>
                     </div>
                 )     
             })}
