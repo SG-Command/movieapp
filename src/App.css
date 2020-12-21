@@ -41,15 +41,22 @@ body {
   font-family: 'Fugaz One', cursive;
 }
 
+.topBoxes {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
 /*--------------------------------------------------------------------------------------------------*/
 /*STYLING FOR THE SEARCH BAR*/
 /*--------------------------------------------------------------------------------------------------*/
 .searchBox {
   border: solid;
+  box-sizing: border-box; /*Sets width and height to include content + padding + border (no margin)*/
+  width: 360px; /*border = 3 + padding = 10 + content = 334*/
   border-radius: 8px;
   display: inline-block;
-  margin: 50px;
   padding: 10px;
+  height: 182px;
 }
 
 .searchHeader {
@@ -75,14 +82,39 @@ body {
 /*--------------------------------------------------------------------------------------------------*/
 /*STYLING FOR THE NOMINATION LIST*/
 /*--------------------------------------------------------------------------------------------------*/
+.nominationContainer {
+  box-sizing: border-box; /*Sets width and height to include content + padding + border (no margin)*/
+  border: solid;
+  border-radius: 8px;
+  display: inline-block;
+  padding-left:25px;
+  padding-right: 15px;
+  height: 182px;
+  width: 431px;
+  vertical-align: top;
+}
+
 .nominationHeader {
   text-transform: uppercase;
   font-size: 25px;
   margin: 0px;
   font-family: 'Fugaz One', cursive;
+  position: relative;
+  top:-14px;
+  background-color: #f9f9f9;
+  display: inline-block;
+}
+
+.nomination {
+  font-size: 16px;
+  color: #000000;
+  padding-top: 5px;
 }
 
 
+.deleteIcon {
+  color:#d4af37;
+}
 /*--------------------------------------------------------------------------------------------------*/
 /*STYLING FOR THE MOVIE LIST COMPONENT*/
 /*--------------------------------------------------------------------------------------------------*/

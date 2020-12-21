@@ -105,6 +105,7 @@ class App extends Component {
           <h1 className="shoppies">The Shoppies</h1>
           <img className="award" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
         </div>
+        <div className ="topBoxes">
         <div className="searchBox">
           <h2 className="searchHeader">Search Criteria</h2>
           <label className="searchLabel" htmlFor="movieTitle"></label>
@@ -112,6 +113,7 @@ class App extends Component {
           <button className="searchBtn" type="submit" onClick={this.searchAPI}>Search</button>
         </div>
         <NominationList data={this.state}/>
+        </div>
         <h2 className = "movieHeader" >Movies</h2>
         <div>
         <MovieList data={this.state} nominateMovie={this.nominateMovie}/>

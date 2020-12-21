@@ -14,7 +14,11 @@ class NominationList extends Component {
             <h2 className="nominationHeader">Nominations</h2>
             {this.props.data.nominations.map((nomination) => {
                 return(
-                    <div key={nomination}>{nomination}</div>
+                    <div>
+                        <div className = "nomination" key={nomination}>{nomination}</div>
+                        <img src="https://github.com/SG-Command/movieapp/blob/master/src/Images/delete-white-24dp.svg?raw=true/"/>
+                    </div>
+
                 )     
             })}
         </div>
