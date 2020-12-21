@@ -10,7 +10,8 @@ class NominationList extends Component {
  
     render(){
         return (
-        <div>
+        <div className="nominationContainer">
+            <h2 className="nominationHeader">Nominations</h2>
             {this.props.data.nominations.map((nomination) => {
                 return(
                     <div key={nomination}>{nomination}</div>

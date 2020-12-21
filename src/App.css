@@ -2,6 +2,13 @@
 
 /*Google Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+body {
+  background-color: #f9f9f9;
+  color: #d4af37;
+  font-family: 'Roboto', sans-serif;
+}
 
 .award {
   /*The original size of the image was 426x150*/
@@ -11,15 +18,18 @@
   vertical-align: middle;
 }
 
-body {
-  background-color: #000000;
-  color: #d4af37;
-  font-family: 'Fugaz One', cursive;
-}
-
 .banner {
   display: flex;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  background-color: #efece3;
+}
+
+.movieHeader {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-family: 'Fugaz One', cursive;
 }
 
 .shoppies {
@@ -28,34 +38,83 @@ body {
   margin: 0px;
   display: inline-block;
   vertical-align: middle;
+  font-family: 'Fugaz One', cursive;
 }
 
-/*Styling for the Movie List*/
+/*--------------------------------------------------------------------------------------------------*/
+/*STYLING FOR THE SEARCH BAR*/
+/*--------------------------------------------------------------------------------------------------*/
+.searchBox {
+  border: solid;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 50px;
+  padding: 10px;
+}
+
+.searchHeader {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin: 0px;
+  font-family: 'Fugaz One', cursive;
+}
+
+.searchTerm {
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.searchBtn {
+  height: 44px;
+  background-color: #d4af37;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+/*STYLING FOR THE NOMINATION LIST*/
+/*--------------------------------------------------------------------------------------------------*/
+.nominationHeader {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin: 0px;
+  font-family: 'Fugaz One', cursive;
+}
+
+
+/*--------------------------------------------------------------------------------------------------*/
+/*STYLING FOR THE MOVIE LIST COMPONENT*/
+/*--------------------------------------------------------------------------------------------------*/
+
 .movieBox {
   display:flex;
   flex-wrap: wrap;
   margin-left: 5%;
   margin-right: 5%;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
+/*Container for each individual movie*/
 .movieContainer {
   position:relative;
   width: 300px;
+  margin-left: 40px;
+  margin-bottom: 40px;
 }
 
 .poster {
   opacity: 1;
   display:block;
   width: 300px;
-  height: auto;
+  height: 450px;
   transition: .5s ease;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden; /* Safari */
 }
 
 .movieContainer:hover .poster {
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .title {
@@ -67,6 +126,9 @@ body {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+  color: #000000;
+  text-decoration: none;
+  width: 95%;
 }
 
 .movieContainer:hover .title {

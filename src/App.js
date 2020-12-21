@@ -22,6 +22,8 @@ class App extends Component {
     this.nominateMovie = this.nominateMovie.bind(this);
     this.searchAPI = this.searchAPI.bind(this);
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
+    this.removeDuplicates = this.removeDuplicates.bind(this);
+    this.createArrayofTitleKey = this.createArrayofTitleKey.bind(this);
 
   }
 
@@ -59,8 +61,36 @@ class App extends Component {
     }
 
     fetch(apiURL).then(response => response.json()).then(data => {
+      this.removeDuplicates(data.Search);
       this.setState({movieList: data.Search},);
     }).catch(error => console.log('error', error));
+  }
+
+  removeDuplicates(movieArray){
+    var adjMovieArray = movieArray;
+    var noDuplicates = false;
+    while (noDuplicates === false) {
+      var i;
+      noDuplicates = true;
+      var titleList = this.createArrayofTitleKey(adjMovieArray);
+      /*Loops through the titleList until it finds a duplicate. Breaks after a duplicate is found to avoid indexing issues.*/
+      for (i=0; i<titleList.length;i++){
+        if(titleList.indexOf(titleList[i]) !== i){
+          adjMovieArray.splice(i,1);
+          noDuplicates = false;
+          break;
+        }
+      }
+    }
+  }
+
+  createArrayofTitleKey(objectList){
+    var i;
+    var keyList = [];
+    for(i=0;i<objectList.length;i++){
+      keyList.push(objectList[i].Title);
+    }
+    return keyList;
   }
 
   updateSearchTerm(event){
@@ -75,19 +105,17 @@ class App extends Component {
           <h1 className="shoppies">The Shoppies</h1>
           <img className="award" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
         </div>
-        <hr></hr>
-        <div>
-          <h2>Search Criteria</h2>
-          <label htmlFor="movieTitle">Movie Title:</label>
-          <input onChange={this.updateSearchTerm} name="movieTitle" type="text"></input>
-          <button type="submit" onClick={this.searchAPI}>Search</button>
+        <div className="searchBox">
+          <h2 className="searchHeader">Search Criteria</h2>
+          <label className="searchLabel" htmlFor="movieTitle"></label>
+          <input className ="searchTerm" placeholder="Enter a Movie..." onChange={this.updateSearchTerm} name="movieTitle" type="text"></input>
+          <button className="searchBtn" type="submit" onClick={this.searchAPI}>Search</button>
         </div>
-        <h2>Movies</h2>
+        <NominationList data={this.state}/>
+        <h2 className = "movieHeader" >Movies</h2>
         <div>
         <MovieList data={this.state} nominateMovie={this.nominateMovie}/>
         </div>
-        <h2>Nominations</h2>
-        <NominationList data={this.state}/>
       </div>
     )
   }
