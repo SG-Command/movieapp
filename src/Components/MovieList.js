@@ -27,22 +27,22 @@ class MovieList extends Component {
 
     render(){
         return (
-        <div>
-            <div>
+            <div className="movieBox">
             {this.props.data.movieList.map((movie) => {
                 console.log(movie)
                 return(
-                    <div key={movie.Title}>
-                    <a href={this.createURL(movie.imdbID)}>{movie.Title}</a>
-                    <p>{movie.Year}</p>
-                    <p>{movie.Type}</p>
-                    <img src={movie.Poster}></img>
-                    <button value={movie.Title} onClick={this.handleClick}>Nominate</button>
+                    <div className="movieContainer" key={movie.Title}>
+                        <img className ="poster" src={movie.Poster}></img>
+                        <a className="title" href={this.createURL(movie.imdbID)}>{movie.Title}</a>
+                        <div className="yearContainer">
+                            <span className="descYear">Year:</span>
+                            <span className="year">{movie.Year}</span>
+                        </div>
+                        <button className="nominateBtn" value={movie.Title} onClick={this.handleClick}>Nominate</button>
                     </div>
                 )     
             })}
             </div>
-        </div>
     )
   }
 }

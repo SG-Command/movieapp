@@ -70,17 +70,18 @@ class App extends Component {
   render(){
     return (
       <div>
-        <div class="Banner">
-          <img src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.jpg?raw=trues"/>
-          <h1>The Shoppies</h1>
-          <img src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.jpg?raw=trues"/>
+        <div className="banner">
+          <img className="award" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
+          <h1 className="shoppies">The Shoppies</h1>
+          <img className="award" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
         </div>
-        <h2>Search Criteria</h2>
+        <hr></hr>
+        <div>
+          <h2>Search Criteria</h2>
           <label htmlFor="movieTitle">Movie Title:</label>
           <input onChange={this.updateSearchTerm} name="movieTitle" type="text"></input>
           <button type="submit" onClick={this.searchAPI}>Search</button>
-        <p>Year</p>
-        <input type="number"></input>
+        </div>
         <h2>Movies</h2>
         <div>
         <MovieList data={this.state} nominateMovie={this.nominateMovie}/>
