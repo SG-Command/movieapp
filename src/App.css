@@ -1,7 +1,8 @@
-/*WEBSITE STYLING*/
+/*GOOGLE FONTS*/
 
-/*Google Fonts*/
+/*Header fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+/*General Text Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
 body {
@@ -10,7 +11,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/*Styling for the header*/
+/*---------------------------------------------------------------------------------------------*/
+/*SHOPPIES HEADER*/
+/*---------------------------------------------------------------------------------------------*/
+
 .award {
   /*The original size of the image was 426x150*/
   height: 107px;
@@ -102,26 +106,14 @@ body {
 
 }
 
-
-/*Other Stylings*/
-
-
-.movieHeader {
-  text-transform: uppercase;
-  font-size: 50px;
-  font-family: 'Fugaz One', cursive;
-}
-
-
-
+/*--------------------------------------------------------------------------------------------------*/
+/*SEARCH BAR*/
+/*--------------------------------------------------------------------------------------------------*/
 .topBoxes {
   margin-top: 50px;
   margin-left: 50px;
 }
 
-/*--------------------------------------------------------------------------------------------------*/
-/*STYLING FOR THE SEARCH BAR*/
-/*--------------------------------------------------------------------------------------------------*/
 .searchBox {
   border: solid;
   box-sizing: border-box; /*Sets width and height to include content + padding + border (no margin)*/
@@ -153,7 +145,7 @@ body {
 }
 
 /*--------------------------------------------------------------------------------------------------*/
-/*STYLING FOR THE NOMINATION LIST*/
+/*NOMINATION LIST*/
 /*--------------------------------------------------------------------------------------------------*/
 .nominationContainer {
   box-sizing: border-box; /*Sets width and height to include content + padding + border (no margin)*/
@@ -188,8 +180,15 @@ body {
 }
 
 /*--------------------------------------------------------------------------------------------------*/
-/*STYLING FOR THE MOVIE LIST COMPONENT*/
+/*MOVIE LIST*/
 /*--------------------------------------------------------------------------------------------------*/
+
+.movieHeader {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-family: 'Fugaz One', cursive;
+}
+
 
 .movieBox {
   display:flex;
