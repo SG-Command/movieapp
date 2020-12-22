@@ -29,7 +29,6 @@ class MovieList extends Component {
         return (
             <div className="movieBox">
             {this.props.data.movieList.map((movie) => {
-                console.log(movie)
                 return(
                     <div className="movieContainer" key={movie.Title}>
                         <img className ="poster" src={movie.Poster}></img>

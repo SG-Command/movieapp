@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import MovieList from './Components/MovieList';
 import NominationList from './Components/NominationList';
+import PopUp from './Components/PopUp';
 
 //-----------------------------------------------------------------------------------------
 // COMPONENT
@@ -24,6 +25,8 @@ class App extends Component {
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
     this.removeDuplicates = this.removeDuplicates.bind(this);
     this.createArrayofTitleKey = this.createArrayofTitleKey.bind(this);
+    this.updateMovieURL = this.updateMovieURL.bind(this);
+    this.deleteNomination = this.deleteNomination.bind(this);
 
   }
 
@@ -41,12 +44,11 @@ class App extends Component {
         }
       }
       if (movieNominated === false && this.state.nominations.length <5){
-        var newArray = this.state.nominations
-        newArray.push(movie)
-        this.setState({nominations: newArray})
+        var array = this.state.nominations
+        array.push(movie)
+        this.setState({nominations: array})
       }
     }
-    console.log(this.state.nominations)
   }
 
   searchAPI(e){
@@ -61,8 +63,9 @@ class App extends Component {
     }
 
     fetch(apiURL).then(response => response.json()).then(data => {
-      this.removeDuplicates(data.Search);
-      this.setState({movieList: data.Search},);
+      this.removeDuplicates(data.Search)
+      var finalArray = this.updateMovieURL(data.Search);
+      this.setState({movieList: finalArray},);
     }).catch(error => console.log('error', error));
   }
 
@@ -97,13 +100,28 @@ class App extends Component {
     this.setState({searchTerm: event.target.value});
   }
 
+  updateMovieURL(movieArray){
+    var i;
+    var newMovieArray = movieArray;
+    for (i=0; i<movieArray.length; i++){
+      if(movieArray[i].Poster === "N/A") {
+        newMovieArray[i].Poster = "https://github.com/SG-Command/movieapp/blob/master/src/Images/MovieFilm.png?raw=true";
+      }
+    }
+    return newMovieArray
+  }
+
+  deleteNomination(){
+    console.log("MOVIE DELETED")
+  }
+
   render(){
     return (
       <div>
         <div className="banner">
-          <img className="award" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
+          <img className="award" alt="Emmy Statue" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
           <h1 className="shoppies">The Shoppies</h1>
-          <img className="award" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
+          <img className="award" alt="Emmy Statue" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
         </div>
         <div className ="topBoxes">
         <div className="searchBox">
@@ -114,6 +132,7 @@ class App extends Component {
         </div>
         <NominationList data={this.state}/>
         </div>
+        <PopUp deleteNomination={this.deleteNomination}/>
         <h2 className = "movieHeader" >Movies</h2>
         <div>
         <MovieList data={this.state} nominateMovie={this.nominateMovie}/>

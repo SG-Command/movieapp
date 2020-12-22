@@ -15,10 +15,9 @@ class NominationList extends Component {
             {this.props.data.nominations.map((nomination) => {
                 return(
                     <div className = "individualNomination">
-                        <div className = "nomination" key={nomination}>{nomination}</div>
-                        <img src="https://github.com/SG-Command/movieapp/blob/master/src/Images/delete-white-24dp.svg?raw=true/"/>
+                        <a href="#popup1" className = "nomination" key={nomination}>{nomination}</a>
+                        <img className="deleteIcon" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/delete-white-24dp.svg?raw=true/"/>
                     </div>
-
                 )     
             })}
         </div>

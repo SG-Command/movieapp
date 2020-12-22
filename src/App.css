@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 /*General Text Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 body {
   background-color: #f9f9f9;
@@ -107,6 +108,102 @@ body {
 }
 
 /*--------------------------------------------------------------------------------------------------*/
+/*POP UP MENU*/
+/*--------------------------------------------------------------------------------------------------*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.popup .close1 {
+  position: absolute;
+  top: 50px;
+  Left: 20px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close2 {
+  position: absolute;
+  top: 50px;
+  Left: 80px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close1:hover {
+  color: #4caf50;
+}
+
+.popup .close2:hover {
+  color: #b41e1e;
+}
+
+/*Large Screen Size*/
+@media screen and (max-width: 1200px){
+
+}
+
+/*Medium Screen Size*/
+@media screen and (max-width: 992px){
+}
+
+/*Small Screen Size*/
+@media screen and (max-width: 768px){
+  .popup{
+    width: 80%;
+  }
+}
+
+/*Extra Small*/
+@media screen and (max-width: 576px){
+  .popup h2 {
+    font-size: 20px;
+  }
+
+  .popup .close1 {
+    font-size: 20px;
+  }
+  
+  .popup .close2 {
+    font-size: 20px;
+  }
+
+}
+
+/*--------------------------------------------------------------------------------------------------*/
 /*SEARCH BAR*/
 /*--------------------------------------------------------------------------------------------------*/
 .topBoxes {
@@ -177,6 +274,19 @@ body {
   height: 24px;
   vertical-align: top;
   text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 391px;
+}
+
+.nomination:hover {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.deleteIcon {
+  display: none;
 }
 
 /*--------------------------------------------------------------------------------------------------*/
