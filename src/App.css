@@ -10,6 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/*Styling for the header*/
 .award {
   /*The original size of the image was 426x150*/
   height: 107px;
@@ -26,12 +27,6 @@ body {
   background-color: #efece3;
 }
 
-.movieHeader {
-  text-transform: uppercase;
-  font-size: 50px;
-  font-family: 'Fugaz One', cursive;
-}
-
 .shoppies {
   font-size: 107px;
   text-transform: uppercase;
@@ -39,7 +34,85 @@ body {
   display: inline-block;
   vertical-align: middle;
   font-family: 'Fugaz One', cursive;
+  margin-left: 15px;
+  margin-right: 15px;
 }
+
+/*Large Screen Size*/
+@media screen and (max-width: 1200px){
+
+  body {
+    background-color: aqua;
+  }
+}
+
+/*Medium Screen Size*/
+@media screen and (max-width: 992px){
+
+  body {
+    background-color: rgb(255, 0, 64);
+  }
+
+  .award {
+    /*The original size of the image was 426x150*/
+    height: 80px;
+    width: 29px;
+  }
+
+  .shoppies {
+    font-size: 80px;
+  }
+
+}
+
+/*Small Screen Size*/
+@media screen and (max-width: 768px){
+
+  body {
+    background-color: rgb(51, 255, 0);
+  }
+
+  .award {
+    display:none;
+  }
+
+  .shoppies {
+    font-size:54px;
+    margin:0px;
+  }
+
+  .banner {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+  }
+
+}
+
+/*Extra Small*/
+@media screen and (max-width: 576px){
+
+  body {
+    background-color: rgb(255, 0, 200);
+  }
+
+  .shoppies {
+    font-size:27px;
+  }
+
+}
+
+
+/*Other Stylings*/
+
+
+.movieHeader {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-family: 'Fugaz One', cursive;
+}
+
+
 
 .topBoxes {
   margin-top: 50px;
@@ -108,13 +181,12 @@ body {
 .nomination {
   font-size: 16px;
   color: #000000;
-  padding-top: 5px;
+  display: inline-block;
+  height: 24px;
+  vertical-align: top;
+  text-align: center;
 }
 
-
-.deleteIcon {
-  color:#d4af37;
-}
 /*--------------------------------------------------------------------------------------------------*/
 /*STYLING FOR THE MOVIE LIST COMPONENT*/
 /*--------------------------------------------------------------------------------------------------*/
