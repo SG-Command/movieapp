@@ -131,8 +131,9 @@ body {
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 30%;
+  width: 20%;
   position: relative;
+  height: 67px;
   transition: all 5s ease-in-out;
 }
 
@@ -143,10 +144,10 @@ body {
 
 .popup .close1 {
   position: absolute;
-  top: 50px;
+  top: 60px;
   Left: 20px;
   transition: all 200ms;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
@@ -154,10 +155,10 @@ body {
 
 .popup .close2 {
   position: absolute;
-  top: 50px;
+  top: 60px;
   Left: 80px;
   transition: all 200ms;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: #333;

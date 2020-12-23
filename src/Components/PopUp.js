@@ -14,7 +14,7 @@ class PopUp extends Component {
     }
 
     delete(){
-        this.props.deleteNomination();
+        this.props.delete();
     }
 
     render(){
