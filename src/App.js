@@ -175,9 +175,11 @@ class App extends Component {
         <div className ="topBoxes">
         <div className="searchBox">
           <h2 className="searchHeader">Search Criteria</h2>
-          <label className="searchLabel" htmlFor="movieTitle"></label>
-          <input className ="searchTerm" placeholder="Enter a Movie..." onChange={this.updateSearchTerm} name="movieTitle" type="text"></input>
-          <button className="searchBtn" type="submit" onClick={this.searchAPI}>Search</button>
+          <div className="searchContent">
+            <label className="searchLabel" htmlFor="movieTitle"></label>
+            <input className ="searchTerm" placeholder="Enter a Movie..." onChange={this.updateSearchTerm} name="movieTitle" type="text"></input>
+            <button className="searchBtn" type="submit" onClick={this.searchAPI}>Search</button>
+          </div>
         </div>
         <NominationList data={this.state} trackNomination={this.nominationButton}/>
         </div>
