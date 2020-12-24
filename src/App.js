@@ -121,7 +121,7 @@ class App extends Component {
     /*Takes no input. Creates a url to make a call to the OMDb API which returns an array with up to 10
     movie objects that match the search terms. Saves the array of movies to the state.*/
     
-    var apiURL = 'http://www.omdbapi.com/?i=tt3896198&apikey=e919a77&s='
+    var apiURL = 'https://www.omdbapi.com/?i=tt3896198&apikey=e919a77&s='
     var i;
 
     // Concatenates the URL for the API pull
