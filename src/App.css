@@ -69,7 +69,8 @@ body {
 }
 
 .popup {
-  margin: 70px auto;
+  margin: auto;
+  margin-top: 5%;
   padding: 20px;
   background: #fff;
   border-radius: 5px;
@@ -330,8 +331,20 @@ body {
 /*--------------------------------------------------------------------------------------------------*/
 /*MODIFICATIONS FOR DIFFERENT SCREEN SIZES*/
 /*--------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 1900px){
+
+  .popup{
+    width: 35%;
+  }
+
+}
+
 /*Large Screen Size*/
 @media screen and (max-width: 1200px){
+
+  .popup{
+    width: 80%;
+  }
 
 }
 
@@ -378,6 +391,11 @@ body {
   .shoppies {
     font-size: 80px;
   }
+
+  .popup{
+    width: 80%;
+  }
+
 }
 
 /*Styling for the movie list*/
