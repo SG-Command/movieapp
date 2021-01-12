@@ -299,7 +299,27 @@ body {
   color: black;
 }
 
+.nominateBtnDisabled {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px;
+  background-color:#5c5b59;
+  color:white;
+  pointer-events: none;
+}
+
 .movieContainer:hover .nominateBtn {
+  opacity: 1;
+}
+
+.movieContainer:hover .nominateBtnDisabled {
   opacity: 1;
 }
 

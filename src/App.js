@@ -20,7 +20,9 @@ class App extends Component {
                     nominations: [],
                     titleSearch: "",
                     searchTerm: "",
-                    clickedItem: ""}
+                    clickedItem: "",
+                    nominateBtn: "", 
+                    nominationBannerClass: "bannerContainer"}
     
     //Functions
     this.createArrayofTitleKey = this.createArrayofTitleKey.bind(this);
@@ -31,6 +33,9 @@ class App extends Component {
     this.searchAPI = this.searchAPI.bind(this);
     this.updateMovieURL = this.updateMovieURL.bind(this);
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
+
+    //References
+    this.updateNominateState = React.createRef();
   }
 
   createArrayofTitleKey(objectList){
@@ -48,7 +53,6 @@ class App extends Component {
   deleteNomination(){
     /**Takes no input. Loops through all the nominations to find the nomination that was clicked and
     removes it from the array. The function then saves the new array to the state. **/
-    
     var i;
     for(i=0;i<this.state.nominations.length; i++){
       /*Checks if the current nomination is equal to the value of the clicked nomination.*/
@@ -59,6 +63,7 @@ class App extends Component {
         this.setState({nominations: newArray})
       }
     }
+    this.updateNominateState.current.updateNominateState();
   }
 
   nominationButton(nomination){
@@ -66,6 +71,7 @@ class App extends Component {
     in the deleteNomination() function if the user chooses to delete the nomination. **/
 
     this.setState({clickedItem: nomination});
+    this.updateNominateState.current.updateNominateState();
   }
 
   nominateMovie(movie){
@@ -186,7 +192,7 @@ class App extends Component {
         <PopUp deleteNomination={this.deleteNomination} delete={this.deleteNomination}/>
         <h2 className = "movieHeader" >Movies</h2>
         <div>
-        <MovieList data={this.state} nominateMovie={this.nominateMovie}/>
+        <MovieList ref={this.updateNominateState} data={this.state} nominateMovie={this.nominateMovie}/>
         </div>
       </div>
     )
