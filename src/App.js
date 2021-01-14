@@ -22,7 +22,7 @@ class App extends Component {
                     searchTerm: "",
                     clickedItem: "",
                     nominateBtn: "", 
-                    nominationBannerClass: "bannerContainer"}
+                    nominationBannerClass: "nominationBannerHidden"}
     
     //Functions
     this.createArrayofTitleKey = this.createArrayofTitleKey.bind(this);
@@ -64,6 +64,7 @@ class App extends Component {
       }
     }
     this.updateNominateState.current.updateNominateState();
+    this.setState({nominationBannerClass: "nominationBannerHidden"});
   }
 
   nominationButton(nomination){
@@ -97,7 +98,13 @@ class App extends Component {
         var array = this.state.nominations
         array.push(movie)
         this.setState({nominations: array})
+        //Updates the nomination banner state if 5 movies have been nominated
+        if(array.length === 5){
+          this.setState({ nominationBannerClass: "nominationBanner"});
+        }
       }
+
+
     }
   }
 
@@ -177,6 +184,11 @@ class App extends Component {
           <img className="award" alt="Emmy Statue" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
           <h1 className="shoppies">The Shoppies</h1>
           <img className="award" alt="Emmy Statue" src="https://github.com/SG-Command/movieapp/blob/master/src/Images/EmmyTrophy.png?raw=true"/>
+        </div>
+        <div className="bannerContainer">
+          <div className={this.state.nominationBannerClass}>
+            <span>Nominations Completed!</span>
+          </div>
         </div>
         <div className ="topBoxes">
         <div className="searchBox">
